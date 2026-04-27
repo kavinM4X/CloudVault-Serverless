@@ -28,30 +28,47 @@ This project uses serverless architecture to:
 Automatically scale resources
 Reduce operational overhead
 Improve performance and reliability
+ 
+ 
+ Architecture Overview
+        The system is divided into four layers:
 
-🏗️ Architecture Overview
-
-The system is divided into four layers:
-
-🔹 Frontend Layer
-React App (Login, Dashboard, Upload, My Files)
-🔹 API Layer
-API Gateway handles HTTP requests
-🔹 Compute Layer
-AWS Lambda processes backend logic
-🔹 Storage Layer
-Amazon S3 → stores files
-DynamoDB → stores metadata
+        🔹 Frontend Layer
+                React App (Login, Dashboard, Upload, My Files)
+        🔹 API Layer
+                API Gateway handles HTTP requests
+        🔹 Compute Layer
+                AWS Lambda processes backend logic
+        🔹 Storage Layer
+                Amazon S3 → stores files
+                DynamoDB → stores metadata
 
 Architecture Flow
-Frontend (React)
-        ↓ HTTPS
-API Gateway
-        ↓
-AWS Lambda
-   ↓          ↓
-S3        DynamoDB
 
+flowchart TD
+
+%% Frontend Layer
+A[React Frontend\n(Login / Dashboard / Upload / My Files)]
+
+%% API Layer
+B[API Gateway\n(HTTP API)]
+
+%% Compute Layer
+C[AWS Lambda\n(Node.js Handler)]
+
+%% Storage Layer
+D[Amazon S3\n(File Storage)]
+E[DynamoDB\n(Metadata Storage)]
+
+%% Flow
+A -- HTTPS Request --> B
+B -- Trigger --> C
+C -- Upload / Get File --> D
+C -- Put / Get Metadata --> E
+D -- Return File --> C
+E -- Return Metadata --> C
+C -- JSON Response --> B
+B -- HTTPS Response --> A
 
 End-to-End Request Flow
 
