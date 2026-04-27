@@ -43,75 +43,36 @@ Improve performance and reliability
                 Amazon S3 → stores files
                 DynamoDB → stores metadata
 
-Architecture Flow
-
-
----
-
-# 🎯 Optional (Better Version with Layers)
-
-If you want **more professional layered diagram** 👇
-
-```mermaid
-flowchart TB
-
-subgraph Frontend Layer
-A[React App]
-end
-
-subgraph API Layer
-B[API Gateway]
-end
-
-subgraph Compute Layer
-C[AWS Lambda]
-end
-
-subgraph Storage Layer
-D[Amazon S3]
-E[DynamoDB]
-end
-
-A -->|HTTPS| B
-B -->|Trigger| C
-C -->|Store File| D
-C -->|Store Metadata| E
-D --> C
-E --> C
-C --> B
-B --> A
-
 End-to-End Request Flow
-
-File Upload
-User selects file
-Frontend validates file (type & size)
-Generate S3 key
-Send POST /files request
-API Gateway receives request
-Lambda processes request
-Metadata stored in DynamoDB
-Success response returned
+  File Upload
+  User selects file
+  Frontend validates file (type & size)
+  Generate S3 key
+  Send POST /files request
+  API Gateway receives request
+  Lambda processes request
+  Metadata stored in DynamoDB
+  Success response returned
 
 File Retrieval
-User opens "My Files" page
-GET /files request sent
-Lambda fetches metadata
-DynamoDB queried
-File list returned
-Display in frontend
+  User opens "My Files" page
+  GET /files request sent
+  Lambda fetches metadata
+  DynamoDB queried
+  File list returned
+  Display in frontend
 
 Tech Stack
-Frontend
-React
-Vite
-Tailwind CSS
-Backend
-AWS Lambda (Node.js)
-Cloud Services
-API Gateway
-Amazon S3
-DynamoDB
+   Frontend
+     React
+     Vite
+     Tailwind CSS
+   Backend
+     AWS Lambda (Node.js)
+     Cloud Services
+     API Gateway
+     Amazon S3
+     DynamoDB
 
 API Endpoints
 
@@ -125,22 +86,21 @@ API Endpoints
 
 
 Security
-IAM roles with least privilege
-MFA enabled
-S3 public access blocked
-Secure API communication
+  IAM roles with least privilege
+  MFA enabled
+  S3 public access blocked
+  Secure API communication
 
 Setup Instructions
-
-1. Clone Repository
-git clone https://github.com/your-username/CloudVault-Serverless.git
-
-2. Backend Setup
-Create Lambda function
-Connect API Gateway
-Configure S3 & DynamoDB
-
-3. Frontend Setup
-    cd frontend
-    npm install
-    npm run dev
+    1. Clone Repository
+      git clone https://github.com/your-username/CloudVault-Serverless.git
+    
+    2. Backend Setup
+      Create Lambda function
+      Connect API Gateway
+      Configure S3 & DynamoDB
+      
+    3. Frontend Setup
+       cd frontend
+       npm install
+       npm run dev
