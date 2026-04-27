@@ -45,30 +45,41 @@ Improve performance and reliability
 
 Architecture Flow
 
-flowchart TD
 
-%% Frontend Layer
-A[React Frontend\n(Login / Dashboard / Upload / My Files)]
+---
 
-%% API Layer
-B[API Gateway\n(HTTP API)]
+# 🎯 Optional (Better Version with Layers)
 
-%% Compute Layer
-C[AWS Lambda\n(Node.js Handler)]
+If you want **more professional layered diagram** 👇
 
-%% Storage Layer
-D[Amazon S3\n(File Storage)]
-E[DynamoDB\n(Metadata Storage)]
+```mermaid
+flowchart TB
 
-%% Flow
-A -- HTTPS Request --> B
-B -- Trigger --> C
-C -- Upload / Get File --> D
-C -- Put / Get Metadata --> E
-D -- Return File --> C
-E -- Return Metadata --> C
-C -- JSON Response --> B
-B -- HTTPS Response --> A
+subgraph Frontend Layer
+A[React App]
+end
+
+subgraph API Layer
+B[API Gateway]
+end
+
+subgraph Compute Layer
+C[AWS Lambda]
+end
+
+subgraph Storage Layer
+D[Amazon S3]
+E[DynamoDB]
+end
+
+A -->|HTTPS| B
+B -->|Trigger| C
+C -->|Store File| D
+C -->|Store Metadata| E
+D --> C
+E --> C
+C --> B
+B --> A
 
 End-to-End Request Flow
 
