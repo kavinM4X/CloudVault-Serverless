@@ -1,0 +1,736 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply m-0 font-sans antialiased;
+}
+
+.animated-gradient {
+  background: linear-gradient(-45deg, #6366f1, #8b5cf6, #2563eb, #4f46e5);
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease infinite;
+}
+
+.animate-card-enter {
+  animation: cardEnter 0.4s ease forwards;
+}
+
+.animate-check-in {
+  animation: checkIn 0.3s ease forwards;
+}
+
+.animate-success-pop {
+  animation: successPop 0.35s ease forwards;
+}
+
+@keyframes cardEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes checkIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes successPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-sidebar-in {
+  animation: sidebarIn 0.45s ease-out forwards;
+}
+
+.animate-main-fade {
+  animation: mainFade 0.45s ease forwards;
+}
+
+.animate-greeting-fade {
+  animation: greetingFade 0.5s ease forwards;
+}
+
+.animate-stat-in {
+  opacity: 0;
+  animation: statIn 0.45s ease forwards;
+}
+
+.animate-row-in {
+  opacity: 0;
+  animation: rowIn 0.35s ease forwards;
+}
+
+.animate-feed-in {
+  opacity: 0;
+  animation: feedIn 0.4s ease forwards;
+}
+
+.animate-dropdown-in {
+  transform-origin: top right;
+  animation: dropdownIn 0.2s ease forwards;
+}
+
+.animate-bell-shake {
+  animation: bellShake 0.45s ease;
+}
+
+@keyframes sidebarIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes mainFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes greetingFade {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes statIn {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rowIn {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes feedIn {
+  0% {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes dropdownIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bellShake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(8deg);
+  }
+  60% {
+    transform: rotate(-6deg);
+  }
+  80% {
+    transform: rotate(4deg);
+  }
+}
+
+.animate-cloud-bob {
+  animation: cloudBob 2s ease-in-out infinite;
+}
+
+.animate-zone-pulse {
+  animation: zonePulse 1.2s ease-in-out infinite;
+}
+
+.animate-zone-shake {
+  animation: zoneShake 0.35s ease;
+}
+
+.animate-release-text {
+  animation: releaseText 0.25s ease;
+}
+
+.animate-dash-move {
+  border-style: dashed;
+  animation: dashMove 7s linear infinite;
+}
+
+.animate-preview-in {
+  animation: previewIn 0.3s ease forwards;
+}
+
+.animate-card-shimmer {
+  position: relative;
+}
+
+.animate-card-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  background: linear-gradient(110deg, transparent 20%, rgba(255, 255, 255, 0.12) 45%, transparent 70%);
+  transform: translateX(-100%);
+  animation: shimmerCard 1.3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.animate-progress-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: translateX(-100%);
+  animation: progressShimmer 1s linear infinite;
+}
+
+.animate-error-slide {
+  animation: errorSlide 0.25s ease forwards;
+}
+
+.animate-check-path {
+  stroke-dasharray: 35;
+  stroke-dashoffset: 35;
+  animation: drawCheck 0.6s ease forwards;
+}
+
+.animate-confetti {
+  opacity: 0;
+  transform: translate(-50%, 0) scale(0.8);
+  animation: confettiBurst 0.8s ease-out forwards;
+}
+
+@keyframes cloudBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes zonePulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+  }
+}
+
+@keyframes zoneShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}
+
+@keyframes releaseText {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dashMove {
+  0% {
+    border-color: rgba(148, 163, 184, 0.6);
+  }
+  50% {
+    border-color: rgba(99, 102, 241, 0.8);
+  }
+  100% {
+    border-color: rgba(148, 163, 184, 0.6);
+  }
+}
+
+@keyframes previewIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmerCard {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes progressShimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes errorSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drawCheck {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes confettiBurst {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--x)), var(--y)) scale(0.8);
+  }
+}
+
+.my-files-search {
+  width: 200px;
+}
+
+.my-files-search:focus {
+  width: 350px;
+}
+
+@media (max-width: 640px) {
+  .my-files-search,
+  .my-files-search:focus {
+    width: 100%;
+  }
+}
+
+.animate-header-down {
+  animation: headerDown 0.35s ease forwards;
+}
+
+.animate-controls-in {
+  animation: controlsIn 0.35s ease forwards;
+}
+
+.animate-file-in {
+  opacity: 0;
+  animation: fileIn 0.35s ease forwards;
+}
+
+.animate-skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-skeleton-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  animation: skeletonShimmer 1.2s linear infinite;
+}
+
+.animate-delete-out {
+  animation: deleteOut 0.28s ease forwards;
+}
+
+.animate-empty-in {
+  animation: emptyIn 0.35s ease forwards;
+}
+
+.animate-clear-fade {
+  animation: clearFade 0.2s ease forwards;
+}
+
+.animate-bulk-bar {
+  animation: bulkBar 0.2s ease forwards;
+}
+
+.animate-modal-in {
+  animation: modalIn 0.22s ease forwards;
+}
+
+@keyframes headerDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes controlsIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fileIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes skeletonShimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes deleteOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+}
+
+@keyframes emptyIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes clearFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bulkBar {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes modalIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-detail-left {
+  animation: detailLeftIn 0.3s ease forwards;
+}
+
+.animate-detail-right {
+  animation: detailRightIn 0.4s ease forwards;
+}
+
+.animate-meta-row {
+  opacity: 0;
+  animation: metaRowIn 0.35s ease forwards;
+}
+
+.animate-download-bounce {
+  animation: downloadBounce 0.5s ease infinite;
+}
+
+.animate-tooltip-fade {
+  animation: tooltipFade 2s ease forwards;
+}
+
+.animate-modal-backdrop-in {
+  animation: backdropIn 0.2s ease forwards;
+}
+
+.animate-modal-backdrop-out {
+  animation: backdropOut 0.2s ease forwards;
+}
+
+.animate-modal-out {
+  animation: modalOut 0.2s ease forwards;
+}
+
+.animate-pending-pulse {
+  animation: pendingPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes detailLeftIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes detailRightIn {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes metaRowIn {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downloadBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+
+@keyframes tooltipFade {
+  0% {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes backdropIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes backdropOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes modalOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes pendingPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.notfound-glitch {
+  text-shadow: 0 0 22px rgba(99, 102, 241, 0.45);
+  animation: glitchIn 0.7s ease;
+}
+
+.notfound-astronaut-wrapper {
+  animation: astronautFloat 3s ease-in-out infinite;
+}
+
+.notfound-particle {
+  animation-name: particleFloat;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  opacity: 0.5;
+}
+
+.notfound-btn-1 {
+  opacity: 0;
+  animation: buttonIn 0.4s ease forwards;
+}
+
+.notfound-btn-2 {
+  opacity: 0;
+  animation: buttonIn 0.4s ease forwards;
+  animation-delay: 0.15s;
+}
+
+@keyframes glitchIn {
+  0% {
+    opacity: 0;
+    transform: skewX(8deg);
+    filter: blur(1px);
+  }
+  20% {
+    opacity: 1;
+    transform: skewX(-6deg);
+  }
+  35% {
+    opacity: 0.4;
+    transform: skewX(6deg);
+  }
+  55% {
+    opacity: 1;
+    transform: skewX(-2deg);
+  }
+  75% {
+    opacity: 0.85;
+    transform: skewX(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: skewX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes astronautFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate(-12px, -35px);
+    opacity: 0.2;
+  }
+}
+
+@keyframes buttonIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

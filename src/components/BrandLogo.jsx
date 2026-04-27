@@ -1,0 +1,52 @@
+export default function BrandLogo({ className = "h-8 w-8" }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 120 100"
+      className={className}
+      aria-hidden="true"
+    >
+      <g>
+        <circle cx="45" cy="58" r="22" fill="#7EC8E3" stroke="#5AAAC0" strokeWidth="1.5" />
+        <circle cx="65" cy="52" r="26" fill="#7EC8E3" stroke="#5AAAC0" strokeWidth="1.5" />
+        <circle cx="83" cy="60" r="18" fill="#7EC8E3" stroke="#5AAAC0" strokeWidth="1.5" />
+        <rect x="38" y="58" width="63" height="22" fill="#7EC8E3" />
+        <rect x="34" y="74" width="72" height="8" rx="4" fill="#7EC8E3" stroke="#5AAAC0" strokeWidth="1.5" />
+        <path
+          d="M38 78 Q36 68 45 58 Q48 38 65 44 Q70 30 85 42 Q100 42 101 60 Q108 62 101 78 Z"
+          fill="#7EC8E3"
+          stroke="#5AAAC0"
+          strokeWidth="2"
+          strokeLinejoin="round"
+        />
+      </g>
+      <g transform="translate(28, 38)" stroke="#A0A0A8" strokeWidth="2" strokeLinecap="round">
+        <line x1="0" y1="-13" x2="0" y2="-9" />
+        <line x1="0" y1="9" x2="0" y2="13" />
+        <line x1="-13" y1="0" x2="-9" y2="0" />
+        <line x1="9" y1="0" x2="13" y2="0" />
+        <line x1="-9.2" y1="-9.2" x2="-6.4" y2="-6.4" />
+        <line x1="6.4" y1="6.4" x2="9.2" y2="9.2" />
+        <line x1="9.2" y1="-9.2" x2="6.4" y2="-6.4" />
+        <line x1="-6.4" y1="6.4" x2="-9.2" y2="9.2" />
+      </g>
+      <circle cx="28" cy="38" r="7" fill="#C8C8D0" stroke="#A0A0A8" strokeWidth="1.5" />
+      <circle cx="28" cy="38" r="4" fill="#E0E0E8" stroke="#A0A0A8" strokeWidth="1" />
+      <g transform="translate(68, 62)">
+        <g fill="#909098" stroke="#707078" strokeWidth="0.8">
+          <rect x="-4" y="-17" width="8" height="6" rx="1" />
+          <rect x="-4" y="11" width="8" height="6" rx="1" />
+          <rect x="-17" y="-4" width="6" height="8" rx="1" />
+          <rect x="11" y="-4" width="6" height="8" rx="1" />
+          <rect x="7" y="-16" width="6" height="8" rx="1" transform="rotate(45 10 -12)" />
+          <rect x="-13" y="8" width="6" height="8" rx="1" transform="rotate(45 -10 12)" />
+          <rect x="-16" y="-13" width="8" height="6" rx="1" transform="rotate(45 -12 -10)" />
+          <rect x="8" y="9" width="8" height="6" rx="1" transform="rotate(45 12 12)" />
+        </g>
+        <circle r="13" fill="#A0A0A8" stroke="#808088" strokeWidth="1.5" />
+        <circle r="8" fill="#C8C8D0" stroke="#909098" strokeWidth="1" />
+        <circle r="4" fill="#E8E8F0" stroke="#A0A0A8" strokeWidth="1" />
+      </g>
+    </svg>
+  );
+}
