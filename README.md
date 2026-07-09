@@ -1,7 +1,5 @@
 ☁️ CloudVault-Serverless
 
-""Documentation" (https://img.shields.io/badge/Documentation-Notion-black?logo=notion)" (https://app.notion.com/p/CloudVault-349702dd26a180e39b37dc680ec5bd50?source=copy_link)
-
 A cloud-native Serverless File Upload & Management System built on AWS. CloudVault enables users to securely upload, store, retrieve, and manage files without provisioning or maintaining traditional servers. The application leverages AWS serverless services to provide scalability, reliability, and cost efficiency.
 
 ---
